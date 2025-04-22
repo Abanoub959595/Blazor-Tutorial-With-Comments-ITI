@@ -1,0 +1,77 @@
+﻿@page "/Department"
+<h3>Department Component</h3>
+
+<PageTitle>Department</PageTitle>
+
+
+@* you have to initialize property on the contructor  
+<h3>@Department?.Id</h3>
+<h3>@Department?.Name</h3>
+<h3>@Department?.Description</h3> 
+*@
+
+@* @if(Department != null)
+{
+
+	<h3>@Department?.Id</h3>
+	<h3>@Department?.Name</h3>
+	<h3>@Department?.Description</h3>
+}else
+{
+	<p class="alert alert-danger">No Department found</p>
+} *@
+@* 
+  To separate HTML from C# logic, Blazor supports partial classes.
+  You can create a .razor.cs file with the same name as the component 
+  to isolate the component's code-behind logic.
+*@
+
+@*
+    What is the issue?
+    => <select id="deptSelect" class="form-control" @bind="deptId" @onchange="GetDept">
+
+    The issue here is that you're using both @bind and @onchange together on the <select> element, which can cause conflicts.
+    - @bind automatically handles value binding for the selected option and triggers change events.
+    - When you add @onchange, you're introducing a custom event handler, which can interfere with the default behavior of @bind.
+
+    Solution:
+    => <select id="deptSelect" class="form-control" @bind="deptId" @bind:event="oninput">
+
+    Instead of using @onchange, use @bind:event="oninput" to bind the event to the "oninput" event. 
+    This ensures the correct handling of changes without causing conflicts with @bind.
+*@
+
+
+<div class="container mt-4">
+    <!-- Department Selection Dropdown with Bootstrap Styling -->
+    <div class="form-group">
+        <label for="deptSelect" class="font-weight-bold">Select Department</label>
+        <select id="deptSelect" class="form-control" @bind="deptId" @onchange="GetDept" @bind:event="oninput">
+            <option value="" disabled selected>Select a Department</option>
+            @foreach (var dept in Departments)
+            {
+                <option value="@dept.Id">@dept.Name</option>
+            }
+        </select>
+    </div>
+
+    <!-- Display Department Data -->
+    @if (Department != null)
+    {
+        <div class="mt-4">
+            <h1 class="text-primary">Department Details</h1>
+            <p><strong>ID:</strong> @Department.Id</p>
+            <p><strong>Name:</strong> @Department.Name</p>
+            <p><strong>Description:</strong> @Department.Description</p>
+        </div>
+    }
+    else
+    {
+        <!-- Alert Message if No Department is Selected -->
+        <p class="alert alert-warning">No Department Selected</p>
+    }
+
+    
+</div>
+
+<h1>@deptId</h1>

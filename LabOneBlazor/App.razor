@@ -1,0 +1,22 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+
+@* 
+The <Router> component in Blazor is responsible for:
+    - Intercepting navigation events
+    - Matching the current URL to a component with a matching @page directive
+    - Rendering that component inside the layout
+
+note Router, RoutView, Pagetitle... etc is a built-in components
+
+ *@

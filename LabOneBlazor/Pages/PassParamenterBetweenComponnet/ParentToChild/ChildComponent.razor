@@ -1,0 +1,42 @@
+﻿
+<div class="alert alert-danger">
+	<p>Child</p>
+	<p>@Str</p>
+
+	<br>
+	<p>@MSG</p>
+
+</div>
+
+
+
+@code {
+	[Parameter]
+	public string Str { get; set; } = "Hello From Child";
+
+	[Parameter]
+	public string MSG { get; set; } = "Default";
+}
+
+
+@*
+📘 Case 1: Parent → Direct Child Component
+
+In this case, the parent component (`/p1`) passes a string parameter to the child component.
+
+✅ Steps to pass a parameter:
+
+1️⃣ In the Parent:
+    <ChildComponent Str="Message from parent" />
+
+2️⃣ In the Child:
+    Use [Parameter] to receive the value:
+        [Parameter]
+        public string Str { get; set; } = "Hello From Child";
+
+🧠 Notes:
+- The `Str` property in the child will receive the value `"Message from parent"` when rendered.
+- This is the most straightforward way to pass data down the component tree.
+
+*@
+

@@ -1,0 +1,55 @@
+﻿
+
+<div class="alert alert-danger">
+	<h3>ChildComponent</h3>
+	<p>@MSG</p>
+	<p>@Id</p>
+</div>
+
+
+@code {
+	//[Parameter] // take value from direct parent or URL
+	[CascadingParameter(Name ="Message")] // at any level // give it name for accessing
+	public string MSG { get; set; } = "Default From Child";
+
+	[CascadingParameter(Name = "Id")]
+	public int Id { get; set; }
+
+}
+
+
+@*
+📘 Case 2: Passing parameters using CascadingValue and [CascadingParameter]
+
+✅ Used when:
+- You want to pass values deeply through the component hierarchy (not just to the direct child).
+- Avoids manually passing props through each level.
+
+🧩 Setup:
+1️⃣ Grandparent (or any higher-level component) wraps children with <CascadingValue>:
+    <CascadingValue Value="localMSG" Name="Message">
+        <CascadingValue Value="100" Name="Id">
+            <ParentComponent></ParentComponent>
+        </CascadingValue>
+    </CascadingValue>
+
+2️⃣ In ChildComponent:
+    Use [CascadingParameter(Name = "...")] to receive values:
+    ```csharp
+    [CascadingParameter(Name = "Message")]
+    public string MSG { get; set; } = "Default From Child";
+
+    [CascadingParameter(Name = "Id")]
+    public int Id { get; set; }
+    ```
+
+🔎 Notes:
+- The `Name` must match between the `<CascadingValue Name="...">` and `[CascadingParameter(Name = "...")]`.
+- Can be used for any type (string, int, etc.).
+- Great for shared data like themes, user info, or localization across nested components.
+- Values flow down the tree automatically; no need for manual re-passing.
+
+
+
+*@
+

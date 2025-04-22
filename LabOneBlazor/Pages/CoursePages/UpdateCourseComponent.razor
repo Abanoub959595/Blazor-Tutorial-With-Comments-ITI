@@ -1,0 +1,37 @@
+﻿@page "/crs/update/{id:int}"
+
+<h3>Update Course Component</h3>
+
+@if(course != null)
+{
+
+
+    <EditForm Model="@course" OnValidSubmit="HandleValidSubmit">
+        <InputHidden id="courseId" Value="@course.id" />
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <InputText id="courseName" class="form-control" @bind-Value="course.crS_Name" />
+            <ValidationMessage For="@(() => course.crS_Name)" />
+        </div>
+
+        <div class="form-group">
+            <label for="courseDescription">Description</label>
+            <InputTextArea id="courseDescription" class="form-control" @bind-Value="course.crS_Desc" />
+            <ValidationMessage For="@(() => course.crS_Desc)" />
+        </div>
+
+        <div class="form-group">
+            <label for="courseDuration">Duration (in hours)</label>
+            <InputNumber id="courseDuration" class="form-control" @bind-Value="course.duration" />
+            <ValidationMessage For="@(() => course.duration)" />
+        </div>
+        <input type="submit" value="save"/>
+
+    </EditForm>
+}else
+{
+    <p>wait...</p>
+}

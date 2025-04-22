@@ -1,0 +1,24 @@
+﻿@page "/AddCourse"
+<h3>AddCourseComponent</h3>
+
+
+<EditForm Model="Course" OnValidSubmit="Save">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div>
+        <label>Name</label>
+        <InputText class="form form-control" @bind-Value="Course.crS_Name"></InputText>
+        <ValidationMessage For="()=>Course.crS_Name"></ValidationMessage>
+    </div>
+    <div>
+        <label>Name</label>
+        <InputText class="form form-control" @bind-Value="Course.crS_Desc"></InputText>
+        <ValidationMessage For="()=>Course.crS_Desc"></ValidationMessage>
+    </div>
+    <div>
+        <label>Name</label>
+        <InputNumber class="form form-control" @bind-Value="Course.duration"></InputNumber>
+        <ValidationMessage For="()=>Course.duration"></ValidationMessage>
+    </div>
+    <input type="submit" value="Add New Course"/>
+
+</EditForm>

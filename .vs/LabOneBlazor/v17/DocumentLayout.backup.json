@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{385E7F96-1857-4E5F-8A60-667DE2567BA1}|LabOneBlazor\\LabOneBlazor.csproj|f:\\iti\\dot net\\blazor\\dayone\\lab\\laboneblazor\\laboneblazor\\pages\\coursepages\\deletecoursecomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{385E7F96-1857-4E5F-8A60-667DE2567BA1}|LabOneBlazor\\LabOneBlazor.csproj|solutionrelative:laboneblazor\\pages\\coursepages\\deletecoursecomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{385E7F96-1857-4E5F-8A60-667DE2567BA1}|LabOneBlazor\\LabOneBlazor.csproj|f:\\iti\\dot net\\blazor\\dayone\\lab\\laboneblazor\\laboneblazor\\pages\\coursepages\\deletecoursecomponent.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{385E7F96-1857-4E5F-8A60-667DE2567BA1}|LabOneBlazor\\LabOneBlazor.csproj|solutionrelative:laboneblazor\\pages\\coursepages\\deletecoursecomponent.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeleteCourseComponent.razor.cs",
+              "DocumentMoniker": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\Pages\\CoursePages\\DeleteCourseComponent.razor.cs",
+              "RelativeDocumentMoniker": "LabOneBlazor\\Pages\\CoursePages\\DeleteCourseComponent.razor.cs",
+              "ToolTip": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\Pages\\CoursePages\\DeleteCourseComponent.razor.cs",
+              "RelativeToolTip": "LabOneBlazor\\Pages\\CoursePages\\DeleteCourseComponent.razor.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA5wBcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T01:29:47.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeleteCourseComponent.razor",
+              "DocumentMoniker": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\Pages\\CoursePages\\DeleteCourseComponent.razor",
+              "RelativeDocumentMoniker": "LabOneBlazor\\Pages\\CoursePages\\DeleteCourseComponent.razor",
+              "ToolTip": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\Pages\\CoursePages\\DeleteCourseComponent.razor",
+              "RelativeToolTip": "LabOneBlazor\\Pages\\CoursePages\\DeleteCourseComponent.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-17T01:29:27.785Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

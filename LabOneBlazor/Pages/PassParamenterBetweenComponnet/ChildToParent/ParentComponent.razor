@@ -1,0 +1,20 @@
+﻿@page "/CTP"
+
+
+<h3>ParentComponent</h3>
+
+<ChildComponent MessageChanged="MSGChangehandeler"></ChildComponent>
+
+<h4>@ParentMessage</h4>
+
+@code {
+
+	public string ParentMessage { get; set; } = "Parent Message";
+
+
+	void MSGChangehandeler (string msg)
+	{
+		ParentMessage = msg;
+	}
+
+}

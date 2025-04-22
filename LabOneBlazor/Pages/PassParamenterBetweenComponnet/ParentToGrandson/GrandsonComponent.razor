@@ -1,0 +1,26 @@
+﻿@page "/Grand"
+
+<h3>GrandsonComponent</h3>
+
+
+@* localMSG => must be property but if it is int you can pass value on the value attribute*@
+<CascadingValue Value="localMSG" Name="Message">
+	<CascadingValue value="100" Name="Id">
+		<ParentComponent></ParentComponent>
+	</CascadingValue>
+</CascadingValue>
+
+
+@* pass only Message *@
+<CascadingValue Value="localMSG" Name="Message">
+	<ParentComponent></ParentComponent>
+</CascadingValue>
+
+
+<ParentComponent></ParentComponent>
+
+
+
+@code {
+	public string localMSG { get; set; } = "From GrandParent";
+}

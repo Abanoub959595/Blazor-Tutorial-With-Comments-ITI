@@ -1,0 +1,38 @@
+﻿@page "/crs"
+
+<h3>CourseComponent</h3>
+
+@if (Courses != null && Courses.Count > 0)
+{
+    <table class="table table-bordered table-striped table-hover mt-3">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Duration</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Courses)
+            {
+                <tr>
+                    <td class="text-center">@course.id</td>
+                    <td>@course.crS_Name</td>
+                    <td>@course.crS_Desc</td>
+                    <td class="text-center">@course.duration</td>
+                    <td>
+                        <a href="/crs/update/@course.id">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info mt-3 text-center">
+        No courses found.
+    </div>
+}

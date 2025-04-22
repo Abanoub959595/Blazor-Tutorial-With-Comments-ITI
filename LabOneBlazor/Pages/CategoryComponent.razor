@@ -1,0 +1,52 @@
+﻿@page "/category"
+
+<h3>Category</h3>
+<select class="form form-control" @bind="CatId" @bind:event="oninput" onchange="@LoadProds">
+	@* <option value="0">-- Select Category --</option> *@
+	@foreach (var category in Categories)
+	{
+		<option value="@category.Id">@category.Name</option>
+	}
+</select>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered align-middle text-center">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price ($)</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Products != null && Products.Count != 0)
+            {
+                foreach (var product in Products)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price.ToString("F2")</td>
+                        <td>
+                            <img src="Product/@product.ImageUrl" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;" />
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-muted">No products available.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+@code {
+
+}

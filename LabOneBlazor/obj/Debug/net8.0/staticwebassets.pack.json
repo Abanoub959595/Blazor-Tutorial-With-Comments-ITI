@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LabOneBlazor.styles.css",
+      "PackagePath": "staticwebassets\\LabOneBlazor.styles.css"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\Product\\images\\1.jpg",
+      "PackagePath": "staticwebassets\\Product\\images\\1.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\Product\\images\\2.jpg",
+      "PackagePath": "staticwebassets\\Product\\images\\2.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\Product\\images\\3.jpg",
+      "PackagePath": "staticwebassets\\Product\\images\\3.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\Product\\images\\4.jpg",
+      "PackagePath": "staticwebassets\\Product\\images\\4.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "F:\\ITI\\Dot Net\\Blazor\\DayOne\\Lab\\LabOneBlazor\\LabOneBlazor\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LabOneBlazor.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LabOneBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LabOneBlazor.props",
+      "PackagePath": "build\\LabOneBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LabOneBlazor.props",
+      "PackagePath": "buildMultiTargeting\\LabOneBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LabOneBlazor.props",
+      "PackagePath": "buildTransitive\\LabOneBlazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

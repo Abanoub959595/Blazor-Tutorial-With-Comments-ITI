@@ -1,0 +1,81 @@
+﻿@page "/prods/Edit/{id:int}"
+
+<h3>Edit Product Data</h3>
+
+@* 
+Instead of using a standard <form> element, use the <EditForm> component for adding and editing data.
+
+EditForm:
+=> Handles client-side validation automatically.
+=> Requires a model to bind form fields to, which ensures proper data handling.
+=> Use InputText for text fields (e.g., Product Name, Description).
+=> Use InputNumber for numeric fields (e.g., Product Price).
+=> It automatically supports data annotations for validation if defined in the model.
+=> OnValidSubmit event can be used to handle form submission only when the form is valid.
+
+By using <EditForm>, the form validation and submission are streamlined, and you avoid manually handling validation logic.
+*@
+
+
+@*
+Client-side validation in Blazor EditForm:
+
+- Validation is based on the model specified in the EditForm.
+- To enable validation:
+  => Add data annotations (e.g., [Required], [Range]) on the model properties.
+  => Use <DataAnnotationsValidator /> to enable validation based on data annotations.
+     - This component connects the EditForm to the built-in .NET validation system using attributes on the model.
+     - Without this component, the form will not validate inputs even if annotations are present.
+  => Use <ValidationMessage For="() => PropertyName" /> to display validation messages for individual fields.
+  => Optionally, use <ValidationSummary /> to show a list of all validation errors in one place.
+
+Form submission events:
+- OnSubmit: Triggered on form submission regardless of whether validation passed or failed.
+- OnValidSubmit: Triggered only when the model is valid (all validation rules are satisfied).
+- OnInvalidSubmit: Triggered when there are one or more validation errors.
+
+Note:
+- The form will not proceed with submission unless validation passes when using OnValidSubmit.
+*@
+
+
+
+@if(Product != null)
+{
+    <EditForm Model="Product" OnValidSubmit="Save">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <div>
+            <label>Name</label>
+            <InputText class="form form-control" @bind-Value="Product.Name"></InputText>
+            <ValidationMessage For="()=>Product.Name"></ValidationMessage>
+        </div>
+        <div>
+            <label>Image</label>
+            <InputText class="form form-control" @bind-Value="Product.ImageUrl"></InputText>
+            <ValidationMessage For="()=>Product.ImageUrl"></ValidationMessage>
+        </div>
+        <div>
+            <label>Salary</label>
+            <InputNumber class="form form-control" @bind-Value="Product.Price"></InputNumber>
+            <ValidationMessage For="()=>Product.Price"></ValidationMessage>
+        </div>
+        <div>
+            <label>Dempartment</label>
+            @* <InputNumber class="form form-control" @bind-Value="Product.CategoryId"></InputNumber> *@
+            <InputSelect class="form form-control" @bind-Value="Product.CategoryId">
+                @foreach(var catItem in categories)
+                {
+                    <option value="@catItem.Id">@catItem.Name</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="()=>Product.CategoryId"></ValidationMessage>
+        </div>
+        <input type="submit" value="Save" class="btn btn-success" />
+    </EditForm>
+}
+else
+{
+	<p class="alert alert-danger">Wait... or Invalid Id</p>
+}
+

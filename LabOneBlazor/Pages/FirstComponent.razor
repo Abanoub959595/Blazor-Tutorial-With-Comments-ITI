@@ -1,0 +1,71 @@
+﻿@page "/First"
+
+@* @page=> must start with / *@
+@* note these component is reuseable like angular *@
+
+@* Recommended for improving search engine optimization (SEO) *@
+@* Updating the document title is a great way to boost your search engine ranking. *@
+<PageTitle>First Component</PageTitle>
+
+<h3>First Component</h3>
+
+@* @onclick="Cilcked" 
+	mustn't take any thing and return any thing
+*@
+<input type="button" value="Click Me" class="btn btn-primary" @onclick="Cilcked"/>
+
+@* if we wanna simulate taking parameter *@
+<input type="button" value="Click Me2" class="btn btn-primary" @onclick='() =>Cilcked2("Abanoub")' />
+
+
+@* one way binding *@
+<h1>Binding From C# To HTML one way binding</h1>
+<input type="button" value="Bind Data" class="btn btn-primary" @onclick='BindData' />
+<h2>@MSG</h2>
+
+
+@* 
+
+  🔁 Two-Way Binding in Blazor
+
+  To implement two-way binding, use either @bind or @bind-value.
+
+  - @bind: Binds by default to the 'onchange' event, meaning the value updates when the input loses focus.
+  - To update the value immediately while typing, use the 'oninput' event:
+      @bind-value="@MSGTwo" @bind-value:event="oninput"
+      or
+      @bind="@MSGTwo" @bind:event="oninput"
+
+  ⚠️ Note the difference:
+  - Both @bind and @bind-value support two-way binding.
+  - However, @bind works with <select> elements, while @bind-value may not function correctly with <select>.
+*@
+
+
+<h1>Two Way Binding From C# to HTML and vice versa</h1>
+<h2>@MSGTwo</h2>
+<input type="text" @bind-value="@MSGTwo" @bind-value:event="oninput"/>  
+
+@code {
+
+	public string MSG { get; set; } = "Hello";
+	public string MSGTwo { get; set; } = "Welcome";
+	void Cilcked ()
+	{
+		Console.WriteLine("Hello From C#");
+	}
+
+	void Cilcked2(string name)
+	{
+		Console.WriteLine($"Hello {name}");
+	}
+
+	void BindData  ()
+	{
+		MSG = "Binding from C# to HTML";
+	}
+
+
+
+
+}

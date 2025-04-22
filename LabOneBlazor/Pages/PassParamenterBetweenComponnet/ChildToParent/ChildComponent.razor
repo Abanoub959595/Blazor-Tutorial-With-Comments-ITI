@@ -1,0 +1,53 @@
+﻿
+
+
+<div class="alert alert-danger">
+	<h3>ChildComponent</h3>
+	<h4>@Message</h4>
+	<input type="button" value="ChangeMSG" @onclick="ChangeMSG"/>
+</div>
+
+
+
+@code {
+	public string Message { get; set; } = "Default Child Message";
+
+	// to send data from child to parent 
+	// declare event "Data type send to parent "
+	[Parameter]
+	public EventCallback<string> MessageChanged { get; set; }
+
+
+	void ChangeMSG()
+	{
+		Message += "a";
+		MessageChanged.InvokeAsync(Message);
+	}
+
+
+}
+
+
+@*
+📘 Case 3: Passing data from Child to Parent using EventCallback
+
+✅ Used when:
+- The child component needs to **notify or send data back** to the parent.
+- Example: Form input, button action, custom events.
+
+🧩 Setup:
+
+1️⃣ In ChildComponent:
+- Define a parameter with `[Parameter]` and type `EventCallback<T>`.
+- Invoke the callback when needed.
+
+```csharp
+[Parameter]
+public EventCallback<string> MessageChanged { get; set; }
+
+void ChangeMSG()
+{
+    Message += "a"; // Update local value
+    MessageChanged.InvokeAsync(Message); // Send to parent
+}
+*@

@@ -1,0 +1,52 @@
+﻿@page "/prods"
+
+<h3>Products List</h3>
+
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered align-middle text-center">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price ($)</th>
+                <th scope="col">Image</th>
+                <th>Details</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Products != null && Products.Count != 0)
+            {
+                foreach (var product in Products)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price.ToString("F2")</td>
+                        <td>
+                            <img src="Product/@product.ImageUrl" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;" />
+                        </td>
+                        <td>
+                            <a href="/prods/details/@product.Id" >Details</a>
+                        </td>
+                        <td>
+                            <a href="/prods/Edit/@product.Id" >Details</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-muted">No products available.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+
+
+}

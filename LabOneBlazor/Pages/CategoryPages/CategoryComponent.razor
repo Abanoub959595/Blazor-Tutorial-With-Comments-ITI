@@ -1,0 +1,45 @@
+﻿@page "/categories"
+
+<h3>CategoryComponent</h3>
+<PageTitle>Categories </PageTitle>
+
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered align-middle text-center">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Category Name</th>
+                <th>Product Count</th>
+@*                 <th>Details</th>
+                <th>Edit</th> *@
+            </tr>
+        </thead>
+        <tbody>
+            @if (categories != null && categories.Count > 0)
+            {
+                foreach (var category in categories)
+                {
+                    <tr>
+                        <td>@category.Id</td>
+                        <td>@category.Name</td>
+                        <td>@(category.Products != null ? category.Products.Count : 0)</td>
+@*                         <td>
+                            <a href="/categories/details/@category.Id">Details</a>
+                        </td>
+                        <td>
+                            <a href="/categories/edit/@category.Id">Edit</a>
+                        </td> *@
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-muted">No categories available.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

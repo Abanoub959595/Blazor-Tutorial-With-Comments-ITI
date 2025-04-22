@@ -1,0 +1,71 @@
+﻿@page "/Category/Details/{id:int}"
+
+<h3>CategoryDetailsComponent</h3>
+
+
+<h2>@Id</h2>
+
+@* 
+👉 Passing Parameters to a Blazor Component from the URL
+
+✔ 1. Add a placeholder to the route:
+   - Use the @page directive to define the route with a parameter placeholder.
+   - Example: @page "/Category/Details/{id}"
+
+✔ 2. Declare a property with the same name as the placeholder:
+   - public int Id { get; set; }
+
+✔ 3. Add the [Parameter] attribute:
+   - Indicates the property receives data from the route.
+
+✔ 4. Add a route constraint for non-string types:
+   - By default, parameters are treated as strings.
+   - Use a type constraint for int, e.g., @page "/Category/Details/{id:int}"
+
+📝 Example:
+--------------------------------------------
+@page "/Category/Details/{id:int}"
+
+[Parameter]
+public int Id { get; set; }
+--------------------------------------------
+
+Now the component will capture the `id` from the URL and bind it to the `Id` property.
+*@
+
+
+@*
+🧩 Passing Parameters Between Components in Blazor – 3 Common Scenarios
+
+📘 Case 1: Parent → Direct Child (One-level Communication)
+----------------------------------------------------------
+The Page Component renders component <a>, which directly passes data to child component <b> using a parameter:
+    <b SomeValue="valueFromA" />
+
+✅ This is the most basic and common form using [Parameter] in child component.
+
+📘 Case 2: Parent → Nested Child (Multi-level Communication)
+------------------------------------------------------------
+The Page Component renders <a>, which renders <b>, which renders <c>. 
+The parameter is passed down from <a> to <b>, then from <b> to <c>.
+
+✅ This is known as **prop drilling**, and it's used when deeply nested children need to access a value from an ancestor.
+
+📘 Case 3: Parent → Deep Child (Skip-level Communication)
+---------------------------------------------------------
+The Page Component renders <a> which passes a value that’s directly accessed by component <c>, skipping intermediate component <b>.
+
+✅ Use **Cascading Values** and **Cascading Parameters** for this:
+    - Define in the Page: 
+        <CascadingValue Value="someValue">
+            <a />
+        </CascadingValue>
+    - Access in <c> with [CascadingParameter]
+
+📝 Summary:
+- ✅ Use [Parameter] for direct communication.
+- 🔁 Use prop drilling for step-by-step passing through the tree.
+- 🌐 Use CascadingParameter for deep or global values across components.
+
+*@
+

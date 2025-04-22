@@ -1,0 +1,15 @@
+﻿@page "/p1"
+<h3>ParentComponent</h3>
+
+<ChildComponent Str="Message form parent" MSG="FromParent"></ChildComponent>
+
+<br />
+<br />
+<br />
+<input type="text" @bind-value="ParentMSG" />
+<ChildComponent Str="@ParentMSG"></ChildComponent>
+
+
+@code {
+	public string ParentMSG { get; set; }
+}
